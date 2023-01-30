@@ -57,9 +57,9 @@ const Statistics = ({ good, neutral, bad }) => {
   )
 }
 
-const Button = ({ label, value, updater }) => {
+const Button = ({ label,  handleClick }) => {
   return (
-    <button onClick={() => updater(value + 1)}> {label} </button>
+    <button onClick={ handleClick}> {label} </button>
   )
 }
 
@@ -76,9 +76,9 @@ const App = () => {
       <div>
         <h2>Give feedback</h2>
 
-        <Button label="Good" value={good} updater={setGood}></Button>
-        <Button label="Neutral" value={neutral} updater={setNeutral}></Button>
-        <Button label="Bad" value={bad} updater={setBad}></Button>
+        <Button label="Good" value={good} handleClick={setGood(good+1)}></Button>
+        <Button label="Neutral" value={neutral} handleClick={setNeutral(neutral+1)}></Button>
+        <Button label="Bad" value={bad} handleClick={setBad(bad+1)}></Button>
 
         <br></br>
       </div>
